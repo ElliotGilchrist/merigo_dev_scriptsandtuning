@@ -8,7 +8,7 @@ defmodule PGS.Game do
 
     @impl true
     def doPortal("create_area", %{"name" => name}) do
-        :ok = Sys.Area.Grid.Square.createAsync(name, @area_type, @layers, @width, @height, false, :perpetual, :persistent, nil)
+        Sys.Area.Grid.Square.create(name, @area_type, @layers, @width, @height, false, :perpetual, :persistent, nil)
     end
 end
 
