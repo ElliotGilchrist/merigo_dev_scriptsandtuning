@@ -3,13 +3,13 @@ defmodule PGS.Area do
 
     @impl true
     def onCreate(_args) do
-        Sys.Log.debug("Area onCreate - #{Sys.Area.name}")
+        Sys.Log.info("Area onCreate - #{Sys.Area.name}")
         print()
     end
 
     @impl true
     def onStart(_args) do
-        Sys.Log.debug("Area onStart - #{Sys.Area.name}")
+        Sys.Log.info("Area onStart - #{Sys.Area.name}")
         print()
     end
 
@@ -35,7 +35,7 @@ defmodule PGS.Area do
         shared properties: #{Area.Data.sharedPropKeys() |> Enum.map(fn k -> "  #{k}: #{inspect Sys.Area.sharedProperty(k)}" end) |> Enum.join("\n")}
         <-------------------
         """
-        Sys.Log.debug(str)
+        Sys.Log.info(str)
         str
     end
 end
