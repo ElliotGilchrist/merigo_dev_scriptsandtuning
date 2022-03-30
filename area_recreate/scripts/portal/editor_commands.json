@@ -1,0 +1,36 @@
+{
+  "AreaRecreateGame": {
+    "access": { "game":  true },
+    "commands": [
+      {
+        "display": "Create Area",
+        "command": "create_area",
+        "buttonDisplay": "create",
+        "args": [
+          {
+            "name": "name",
+            "display": "Name",
+            "default": "myarea"
+          }
+        ]
+      }
+    ]
+  },
+  "AreaRecreateArea": {
+    "access": { "area":  true },
+    "commands": [
+      {
+        "display": "Print",
+        "command": "print",
+        "buttonDisplay": "print",
+        "args": []
+      },
+      {
+        "display": "Populate",
+        "command": "populate",
+        "buttonDisplay": "populate",
+        "args": []
+      }
+    ]
+  }
+}
