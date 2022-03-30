@@ -27,13 +27,15 @@ defmodule PGS.Area do
     end
 
     defp print() do
-        Sys.Log.debug("""
+        str = """
         ---- Area Info #{Sys.Area.name} ---->
         player members: #{inspect Sys.Area.members(0, :player)}
         element members: #{inspect Sys.Area.members(0, :element)}
         local properties: #{Sys.Area.localPropertyKeys() |> Enum.map(fn k -> "  #{k}: #{inspect Sys.Area.localProperty(k)}" end) |> Enum.join("\n")}
         shared properties: #{Sys.Area.sharedPropertyKeys() |> Enum.map(fn k -> "  #{k}: #{inspect Sys.Area.sharedProperty(k)}" end) |> Enum.join("\n")}
         <-------------------
-        """)
+        """
+        Sys.Log.debug(str)
+        str
     end
 end
