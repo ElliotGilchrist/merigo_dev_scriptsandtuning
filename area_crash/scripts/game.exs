@@ -19,13 +19,21 @@ defmodule PGS.Game do
     def doPortal("cycle_area_repeat", %{"name" => name}) do
         for _ <- 1..500 do
             Sys.Area.destroy(name)
-            create_area(name)
-            info()
+            rsp = create_area(name)
+            inf = info()
+            {rsp, inf}
         end
     end
 
     defp create_area(name) do
-        Sys.Area.Grid.Square.create(name, @area_type, @layers, @width, @height, false, :perpetual, :persistent, nil)
+        case Sys.Area.Grid.Square.create(name, @area_type, @layers, @width, @height, false, :perpetual, :persistent, nil) do
+            :ok ->
+                Sys.Log.info("Area #{name} created")
+                :ok
+            :failed ->
+                Sys.Log.info("Area #{name} failed to create")
+                :failed
+        end
     end
 
     defp info() do
