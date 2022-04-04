@@ -3,40 +3,10 @@
     "access": { "game":  true },
     "commands": [
       {
-        "display": "Create Area",
-        "command": "create_area",
-        "buttonDisplay": "create",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      },
-      {
-        "display": "Cycle Area",
-        "command": "cycle_area",
-        "buttonDisplay": "cycle",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      },
-      {
-        "display": "Cycle Area Repeat",
-        "command": "cycle_area_repeat",
-        "buttonDisplay": "cycle",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
+        "display": "Bulk Test",
+        "command": "bulk_test",
+        "buttonDisplay": "test",
+        "args": []
       }
     ]
   }

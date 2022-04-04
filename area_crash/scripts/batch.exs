@@ -1,17 +1,18 @@
 defmodule PGS.Batch do
     @behaviour Sys.Script.Batch
 
-    @impl true
-    def onRun("cycle_area", name, _id, _status) do
-        Sys.Log.info("Starting cycle_areas batch process")
-        results = for _ <- 1..500 do
-            Sys.Area.destroy(name)
-            before_info = PGS.AreaManager.info()
-            create_rsp = PGS.AreaManager.create_area(name)
-            after_info = PGS.AreaManager.info()
-            {before_info, create_rsp, after_info}
-        end
-        Sys.Log.info(inspect results)
-        results
+    def bulk_test() do
+        Enum.each(1..20, fn _ -> Sys.Batch.run("cycle_area") end)
     end
+
+    @impl true
+    def onRun("cycle_area", _args, _id, _status) do
+        for _ <- 1..500 do
+            name = PGS.AreaManager.random_area()
+            PGS.AreaManager.random_action(name)
+        end
+        :ok
+    end
+
+
 end
