@@ -17,14 +17,21 @@ defmodule PGS.Game do
     end
 
     def doPortal("cycle_area_repeat", %{"name" => name}) do
-        for _ <- 1..50 do
+        for _ <- 1..500 do
             Sys.Area.destroy(name)
             create_area(name)
+            info()
         end
     end
 
     defp create_area(name) do
         Sys.Area.Grid.Square.create(name, @area_type, @layers, @width, @height, false, :perpetual, :persistent, nil)
+    end
+
+    defp info() do
+        msg = "All areas: #{inspect Sys.Area.all()}"
+        Sys.Log.info(msg)
+        msg
     end
 end
 
