@@ -12,9 +12,7 @@ defmodule PGS.Batch do
     def onRun("bulk_test", batch_index, _id, _status) do
         Sys.Log.info("Starting bulk_test batch #{batch_index}")
         for i <- 1..@action_count do
-            Sys.Log.info("[Batch #{batch_index} - Action #{i}]")
-            name = PGS.AreaManager.random_area()
-            PGS.AreaManager.random_action(name)
+            PGS.AreaManager.random_action("[Batch #{batch_index} - Action #{i}]")
         end
         Sys.Log.info("Finished bulk_test batch #{batch_index}")
         :ok
