@@ -14,7 +14,7 @@ defmodule PGS.Game do
     end
 
     def doPortal("cycle_area_repeat", %{"name" => name}) do
-        Sys.Batch.run("cycle_areas")
+        Sys.Batch.run("cycle_area", name)
     end
 end
 

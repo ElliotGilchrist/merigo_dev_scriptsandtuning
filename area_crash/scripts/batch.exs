@@ -2,7 +2,7 @@ defmodule PGS.Batch do
     @behaviour Sys.Script.Batch
 
     @impl true
-    def onRun("cycle_areas", _args, _id, _status) do
+    def onRun("cycle_area", name, _id, _status) do
         Sys.Log.info("Starting cycle_areas batch process")
         results = for _ <- 1..500 do
             Sys.Area.destroy(name)
