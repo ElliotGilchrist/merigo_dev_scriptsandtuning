@@ -17,18 +17,24 @@ defmodule PGS.AreaManager do
     end
 
     def random_action(name) do
-        case Sys.Random.integer(5) do
-            0 -> create_area_async(name)
-            1 -> create_area_sync(name)
-            2 ->
-                Sys.Log.info("Destroying #{name}")
-                Sys.Area.destroy(name)
-            3 ->
-                Sys.Log.info("Populating (sync) #{name}")
-                Sys.Area.command(name, "populate", nil)
-            4 ->
-                Sys.Log.info("Populating (async) #{name}")
-                Sys.Area.notify(name, "populate", nil)
+        try do
+            case Sys.Random.integer(5) do
+                0 -> create_area_async(name)
+                1 -> create_area_sync(name)
+                2 ->
+                    Sys.Log.info("Destroying #{name}")
+                    Sys.Area.destroy(name)
+                3 ->
+                    Sys.Log.info("Populating (sync) #{name}")
+                    Sys.Area.command(name, "populate", nil)
+                4 ->
+                    Sys.Log.info("Populating (async) #{name}")
+                    Sys.Area.notify(name, "populate", nil)
+            end
+        rescue
+            e ->
+                Sys.Log.info("Rescued, #{inspect e}")
         end
     end
+    :ok
 end
