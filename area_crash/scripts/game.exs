@@ -19,9 +19,10 @@ defmodule PGS.Game do
     def doPortal("cycle_area_repeat", %{"name" => name}) do
         for _ <- 1..500 do
             Sys.Area.destroy(name)
-            rsp = create_area(name)
-            inf = info()
-            {rsp, inf}
+            before_info = info()
+            create_rsp = create_area(name)
+            after_info = info()
+            {before_info, create_rsp, after_info}
         end
     end
 
