@@ -19,7 +19,12 @@ defmodule PGS.AreaManager do
 
     def populate_sync(name) do
         Sys.Log.info("[#{name}] Populating (sync) ->")
-        Sys.Area.command(name, "populate", nil)
+        try do
+            Sys.Area.command(name, "populate", nil)
+        rescue
+            e ->
+                Sys.Log.error("rescued sync populate, #{inspect e}")
+        end
         Sys.Log.info("[#{name}] <- Populated (sync)")
     end
 
