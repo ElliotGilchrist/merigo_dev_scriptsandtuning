@@ -33,10 +33,16 @@ defmodule PGS.Area do
         populate()
     end
 
+    @entity_data Enum.map(1..1000, fn i -> "#{i}" end)
+
     defp populate() do
-        Sys.Area.setLocalProperty("foo", "bar")
+        Sys.Area.setLocalProperty("foo", %{"foo" => @entity_data})
         Sys.Area.setSharedProperty("beep", "boop")
-        Sys.Area.add(0, {2,2}, Sys.Utils.createKey, :element, nil)
+        Sys.Area.add(0, {1,2}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {2,2}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {2,3}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {2,4}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {1,4}, Sys.Utils.createKey, :element, @entity_data)
         Sys.Log.info("[PGS.Area #{Sys.Area.name}] Finished populating")
     end
 end
