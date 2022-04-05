@@ -1,8 +1,8 @@
 defmodule PGS.Batch do
     @behaviour Sys.Script.Batch
 
-    @batch_count 10
-    @action_count 500
+    @batch_count 50
+    @action_count 1000
 
     def bulk_test() do
         Enum.each(1..@batch_count, fn i -> Sys.Batch.run("bulk_test", i) end)
