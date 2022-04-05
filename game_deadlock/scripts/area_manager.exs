@@ -1,6 +1,6 @@
 defmodule PGS.AreaManager do
 
-    @area_count 1
+    @area_count 100
 
     def random_area() do
         "myarea#{Sys.Random.integer(@area_count)}"
@@ -23,16 +23,14 @@ defmodule PGS.AreaManager do
                     Sys.Log.info("#{info} Creating (async)")
                     create_area_async(name)
                 1 ->
-                    Sys.Log.info("#{info} Creating (sync)->")
+                    Sys.Log.info("#{info} Creating (sync)")
                     create_area_sync(name)
-                    Sys.Log.info("#{info} <-Created (sync)")
                 2 ->
                     Sys.Log.info("#{info} Destroying")
                     Sys.Area.destroy(name)
                 3 ->
-                    Sys.Log.info("#{info} Populating (sync)->")
+                    Sys.Log.info("#{info} Populating (sync)")
                     Sys.Area.command(name, "populate", nil)
-                    Sys.Log.info("#{info} <-Populating (sync)")
                 4 ->
                     Sys.Log.info("#{info} Populating (async)")
                     Sys.Area.notify(name, "populate", nil)
