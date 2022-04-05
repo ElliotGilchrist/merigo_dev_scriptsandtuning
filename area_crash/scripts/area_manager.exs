@@ -24,6 +24,10 @@ defmodule PGS.AreaManager do
         rescue
             e ->
                 Sys.Log.error("rescued sync populate, #{inspect e}")
+        catch
+            :exit, e -> Sys.Log.error("caught exit sync pop, #{inspect e}")
+            e ->
+                Sys.Log.error("caught sync populate, #{inspect e}")
         end
         Sys.Log.info("[#{name}] <- Populated (sync)")
     end
