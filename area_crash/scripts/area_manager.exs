@@ -1,6 +1,6 @@
 defmodule PGS.AreaManager do
 
-    @area_count 20
+    @area_count 1
 
     def random_area() do
         "myarea#{Sys.Random.integer(@area_count)}"
