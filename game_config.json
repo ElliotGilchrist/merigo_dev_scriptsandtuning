@@ -1,0 +1,76 @@
+{
+  "stages": [
+    {
+      "tuning": {
+        "repo": "git@github.com:ElliotGilchrist/merigo_dev_scriptsandtuning.git",
+        "path": "empty_tuning",
+        "branch": "main"
+      },
+      "suid": "9a0711f3-a7b6-4c79-aa24-39ef42a8d527",
+      "script": {
+        "repo": "git@github.com:ElliotGilchrist/merigo_dev_scriptsandtuning.git",
+        "path": "area_crash/scripts",
+        "branch": "main"
+      },
+      "name": "AreaCrash",
+      "macrosEnabled": false,
+      "launch": false,
+      "isLive": false,
+      "guid": "85ba25a1-3e35-4ffe-b29d-1649154bd1f0",
+      "google": {},
+      "gKey": "5713553401020033260",
+      "cmsUseCDN": true,
+      "cms": "CoIKQrNMQXx1xKMKfPjd15JQ52XsJHsdkfzu3q7OSCs=",
+      "analytics": null
+    },
+    {
+      "tuning": {
+        "repo": "git@github.com:ElliotGilchrist/merigo_dev_scriptsandtuning.git",
+        "path": "empty_tuning",
+        "branch": "main"
+      },
+      "suid": "241947f7-88c8-4008-95ed-1df38e70b29c",
+      "script": {
+        "repo": "git@github.com:ElliotGilchrist/merigo_dev_scriptsandtuning.git",
+        "path": "area_recreate/scripts",
+        "branch": "main"
+      },
+      "name": "AreaRecreate",
+      "macrosEnabled": false,
+      "launch": false,
+      "isLive": false,
+      "guid": "85ba25a1-3e35-4ffe-b29d-1649154bd1f0",
+      "google": {},
+      "gKey": "8484012451944363958",
+      "cmsUseCDN": true,
+      "cms": "CoIKQrNMQXx1xKMKfPjd15JQ52XsJHsdkfzu3q7OSCs=",
+      "analytics": null
+    },
+    {
+      "tuning": {
+        "repo": "git@github.com:ElliotGilchrist/merigo_dev_scriptsandtuning.git",
+        "path": "empty_tuning",
+        "branch": "main"
+      },
+      "suid": "1b5c1d3f-5c2c-43ec-b82f-a70ec3f4e79c",
+      "script": {
+        "repo": "git@github.com:ElliotGilchrist/merigo_dev_scriptsandtuning.git",
+        "path": "game_deadlock/scripts",
+        "branch": "main"
+      },
+      "name": "GameDeadlock",
+      "macrosEnabled": false,
+      "launch": false,
+      "isLive": false,
+      "guid": "85ba25a1-3e35-4ffe-b29d-1649154bd1f0",
+      "google": {},
+      "gKey": "221830412424452607",
+      "cmsUseCDN": true,
+      "cms": "CoIKQrNMQXx1xKMKfPjd15JQ52XsJHsdkfzu3q7OSCs=",
+      "analytics": null
+    }
+  ],
+  "org": "1cdd51b9-f051-4c9d-8f0d-9f418aa53b7d",
+  "name": "Elliot",
+  "guid": "85ba25a1-3e35-4ffe-b29d-1649154bd1f0"
+}
