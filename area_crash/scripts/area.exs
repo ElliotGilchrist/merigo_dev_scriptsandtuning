@@ -2,6 +2,11 @@ defmodule PGS.Area do
     @behaviour Sys.Script.Area
 
     @impl true
+    def profile(_) do
+        %{name: Sys.Area.name}
+    end
+
+    @impl true
     def onCreate(_args) do
         Sys.Log.info("[PGS.Area #{Sys.Area.name}] onCreate")
     end
