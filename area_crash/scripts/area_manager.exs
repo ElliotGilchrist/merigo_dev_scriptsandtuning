@@ -1,9 +1,9 @@
 defmodule PGS.AreaManager do
 
-    @area_count 1
+    @area_count 5
 
     def random_area() do
-        "myarea#{Sys.Random.integer(@area_count)}"
+        "taketwo#{Sys.Random.integer(@area_count)}"
     end
 
     def create_area_sync(name) do
