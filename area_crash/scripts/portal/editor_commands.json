@@ -7,6 +7,66 @@
         "command": "bulk_test",
         "buttonDisplay": "test",
         "args": []
+      },
+      {
+        "display": "Create Async",
+        "command": "create_async",
+        "buttonDisplay": "create",
+        "args": [
+          {
+            "name": "name",
+            "display": "Name",
+            "default": "myarea"
+          }
+        ]
+      },
+      {
+        "display": "Create Sync",
+        "command": "create_sync",
+        "buttonDisplay": "create",
+        "args": [
+          {
+            "name": "name",
+            "display": "Name",
+            "default": "myarea"
+          }
+        ]
+      },
+      {
+        "display": "Destroy",
+        "command": "destroy",
+        "buttonDisplay": "destroy",
+        "args": [
+          {
+            "name": "name",
+            "display": "Name",
+            "default": "myarea"
+          }
+        ]
+      },
+      {
+        "display": "Populate Async",
+        "command": "populate_async",
+        "buttonDisplay": "populate",
+        "args": [
+          {
+            "name": "name",
+            "display": "Name",
+            "default": "myarea"
+          }
+        ]
+      },
+      {
+        "display": "Populate Sync",
+        "command": "populate_sync",
+        "buttonDisplay": "populate",
+        "args": [
+          {
+            "name": "name",
+            "display": "Name",
+            "default": "myarea"
+          }
+        ]
       }
     ]
   }
