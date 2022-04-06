@@ -1,20 +1,20 @@
 defmodule PGS.AreaManager do
 
-    @area_count 10
+    @area_count 100
 
     def random_area() do
-        "resizing#{Sys.Random.integer(@area_count)}"
+        "resizing2#{Sys.Random.integer(@area_count)}"
     end
 
     def create_area_sync(name) do
         Sys.Log.info("[#{name}] Creating (sync) ->")
-        Sys.Area.Grid.Square.create(name, "default", 1, Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
+        Sys.Area.Grid.Square.create(name, "default", Sys.Random.sample(1..3), Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
         Sys.Log.info("[#{name}] <- Created (sync)")
     end
 
     def create_area_async(name) do
         Sys.Log.info("[#{name}] Creating (async)")
-        Sys.Area.Grid.Square.createAsync(name, "default", 1, Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
+        Sys.Area.Grid.Square.createAsync(name, "default", Sys.Random.sample(1..3), Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
     end
 
     def populate_sync(name) do
