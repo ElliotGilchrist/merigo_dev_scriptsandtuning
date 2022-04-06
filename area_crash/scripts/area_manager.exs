@@ -1,9 +1,9 @@
 defmodule PGS.AreaManager do
 
-    @area_count 1
+    @area_count 10
 
     def random_area() do
-        "bashthree#{Sys.Random.integer(@area_count)}"
+        "resizing#{Sys.Random.integer(@area_count)}"
     end
 
     def create_area_sync(name) do
@@ -48,8 +48,8 @@ defmodule PGS.AreaManager do
         # GenServer.cast(pid, {:destroy, gKey, areaName, args})
     end
 
-    # @actions [:create_area_sync, :create_area_async, :populate_sync, :populate_async, :destroy]
-    @actions [:create_area_sync]
+    @actions [:create_area_sync, :create_area_async, :populate_sync, :populate_async, :destroy]
+    # @actions [:create_area_sync]
 
     def random_action(info) do
         name = PGS.AreaManager.random_area()
