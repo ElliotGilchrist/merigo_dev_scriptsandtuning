@@ -1,0 +1,9 @@
+- config: area_crash/config.yml
+  scripts: area_crash/scripts
+  tuning: empty_tuning
+- config: area_recreate/config.yml
+  scripts: area_recreate/scripts
+  tuning: empty_tuning
+- config: game_deadlock/config.yml
+  scripts: game_deadlock/scripts
+  tuning: empty_tuning
