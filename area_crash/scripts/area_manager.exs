@@ -3,7 +3,7 @@ defmodule PGS.AreaManager do
     @area_count 1
 
     def random_area() do
-        "bash#{Sys.Random.integer(@area_count)}"
+        "bashtwo#{Sys.Random.integer(@area_count)}"
     end
 
     def create_area_sync(name) do
