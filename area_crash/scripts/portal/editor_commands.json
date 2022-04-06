@@ -69,5 +69,23 @@
         ]
       }
     ]
+  },
+  "Exec": {
+    "access": {
+      "game": true
+    },
+    "commands": [
+      {
+        "display": "Exec",
+        "command": "exec",
+        "buttonDisplay": "Exec",
+        "args": [
+          { "name": "exec",
+            "display": "exec",
+            "default": "Sys.Log.debug(\"Hello, World\")"
+          }
+        ]
+      }
+    ]
   }
 }

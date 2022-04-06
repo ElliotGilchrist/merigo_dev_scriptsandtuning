@@ -25,6 +25,15 @@ defmodule PGS.Game do
     def doPortal("populate_sync", %{"name" => name}) do
         Sys.Area.command(name, "populate", nil)
     end
+
+    def doPortal("exec", %{"exec" => exec}) do
+        {result, errors} = Code.eval_string(exec, [], __ENV__)
+        Sys.Log.debug(inspect result)
+        if (errors != []) do
+            Sys.Log.error("Portal Exec Error: #{inspect errors}")
+        end
+        result
+    end
 end
 
 
