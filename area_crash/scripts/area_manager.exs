@@ -43,7 +43,7 @@ defmodule PGS.AreaManager do
     end
 
     # @actions [:create_area_sync, :create_area_async, :populate_sync, :populate_async, :destroy]
-    @actions [:create_area_sync, :create_area_async, :destroy]
+    @actions [:create_area_sync, :destroy]
 
     def random_action(info) do
         name = PGS.AreaManager.random_area()
