@@ -43,7 +43,10 @@ defmodule PGS.Area do
     defp populate() do
         Sys.Area.setLocalProperty("foo", %{"foo" => @entity_data})
         Sys.Area.setSharedProperty("beep", "boop")
-        Sys.Area.add(0, {1,2}, Sys.Utils.createKey, :element, @entity_data)
+        for _ <- 1..10 do
+            Sys.Area.add(Sys.Random.sample(0..(Sys.Area.layers - 1)), {Sys.Random.sample(0..8), Sys.Random.sample(0..8)}, Sys.Utils.createKey, :element, @entity_data)
+        end
+
         Sys.Area.add(0, {2,2}, Sys.Utils.createKey, :element, @entity_data)
         Sys.Area.add(0, {2,3}, Sys.Utils.createKey, :element, @entity_data)
         Sys.Area.add(0, {2,4}, Sys.Utils.createKey, :element, @entity_data)
