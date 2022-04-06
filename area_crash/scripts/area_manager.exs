@@ -43,7 +43,7 @@ defmodule PGS.AreaManager do
 
     def destroy(name) do
         pid = area_pid(name)
-        Sys.Log.info("[#{name}] Destroying pid: #{pid}")
+        Sys.Log.info("[#{name}] Destroying pid: #{inspect pid}")
         Sys.Area.destroy(name)
         # GenServer.cast(pid, {:destroy, gKey, areaName, args})
     end
