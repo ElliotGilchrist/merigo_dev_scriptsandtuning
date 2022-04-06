@@ -3,7 +3,18 @@ defmodule PGS.AreaManager do
     @area_count 100
 
     def random_area() do
-        "resizing2#{Sys.Random.integer(@area_count)}"
+        random_area(Sys.Random.integer(@area_count))
+    end
+
+    def random_area(index) do
+        "resizing2#{index}"
+    end
+
+    def bulk_create() do
+        Enum.each(1..@area_count, fn i ->
+            area = random_area(i)
+            create_area_sync(area)
+        end)
     end
 
     def create_area_sync(name) do

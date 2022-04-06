@@ -6,6 +6,10 @@ defmodule PGS.Game do
         PGS.Batch.bulk_test()
     end
 
+    def doPortal("bulk_create", _) do
+        PGS.AreaManager.bulk_create()
+    end
+
     def doPortal("create_async", %{"name" => name}) do
         PGS.AreaManager.create_area_async(name)
     end
