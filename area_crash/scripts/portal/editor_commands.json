@@ -9,6 +9,12 @@
         "args": []
       },
       {
+        "display": "Bulk Create",
+        "command": "bulk_create",
+        "buttonDisplay": "create",
+        "args": []
+      },
+      {
         "display": "Create Async",
         "command": "create_async",
         "buttonDisplay": "create",
