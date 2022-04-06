@@ -1,9 +1,9 @@
 defmodule PGS.AreaManager do
 
-    @area_count 10
+    @area_count 1
 
     def random_area() do
-        "narrowing#{Sys.Random.integer(@area_count)}"
+        "bash#{Sys.Random.integer(@area_count)}"
     end
 
     def create_area_sync(name) do
@@ -49,7 +49,7 @@ defmodule PGS.AreaManager do
     end
 
     # @actions [:create_area_sync, :create_area_async, :populate_sync, :populate_async, :destroy]
-    @actions [:create_area_sync, :destroy]
+    @actions [:create_area_sync]
 
     def random_action(info) do
         name = PGS.AreaManager.random_area()
