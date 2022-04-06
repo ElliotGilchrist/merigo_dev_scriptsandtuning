@@ -8,13 +8,13 @@ defmodule PGS.AreaManager do
 
     def create_area_sync(name) do
         Sys.Log.info("[#{name}] Creating (sync) ->")
-        Sys.Area.Grid.Square.create(name, "default", 1, 16, 16, false, :perpetual, :persistent, nil)
+        Sys.Area.Grid.Square.create(name, "default", 1, Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
         Sys.Log.info("[#{name}] <- Created (sync)")
     end
 
     def create_area_async(name) do
         Sys.Log.info("[#{name}] Creating (async)")
-        Sys.Area.Grid.Square.createAsync(name, "default", 1, 16, 16, false, :perpetual, :persistent, nil)
+        Sys.Area.Grid.Square.createAsync(name, "default", 1, Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
     end
 
     def populate_sync(name) do
