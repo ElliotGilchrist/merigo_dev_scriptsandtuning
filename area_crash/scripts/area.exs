@@ -48,6 +48,11 @@ defmodule PGS.Area do
         Sys.Area.add(0, {2,3}, Sys.Utils.createKey, :element, @entity_data)
         Sys.Area.add(0, {2,4}, Sys.Utils.createKey, :element, @entity_data)
         Sys.Area.add(0, {1,4}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {1,8}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {2,8}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {8,3}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {8,4}, Sys.Utils.createKey, :element, @entity_data)
+        Sys.Area.add(0, {8,8}, Sys.Utils.createKey, :element, @entity_data)
         Sys.Log.info("[PGS.Area #{Sys.Area.name}] Finished populating")
     end
 end

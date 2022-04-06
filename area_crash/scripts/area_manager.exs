@@ -37,9 +37,15 @@ defmodule PGS.AreaManager do
         Sys.Area.notify(name, "populate", nil)
     end
 
+    def area_pid(name) do
+        Area.Controller.service(Sys.Game.key, name)
+    end
+
     def destroy(name) do
-        Sys.Log.info("[#{name}] Destroying")
+        pid = area_pid(name)
+        Sys.Log.info("[#{name}] Destroying pid: #{pid}")
         Sys.Area.destroy(name)
+        # GenServer.cast(pid, {:destroy, gKey, areaName, args})
     end
 
     # @actions [:create_area_sync, :create_area_async, :populate_sync, :populate_async, :destroy]
