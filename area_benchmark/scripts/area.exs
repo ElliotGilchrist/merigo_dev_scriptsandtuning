@@ -39,6 +39,12 @@ defmodule PGS.Area do
 #        populate()
 #    end
 
+    @impl true
+    def onNotify("ping", _) do
+        Sys.Log.info("[PGS.Area #{Sys.Area.name}] Pinged. members: #{Sys.Area.members(0, :element) |> length}")
+        :ok
+    end
+
     @entity_data Enum.map(1..10, fn i -> "#{i}" end)
 
     defp populate() do

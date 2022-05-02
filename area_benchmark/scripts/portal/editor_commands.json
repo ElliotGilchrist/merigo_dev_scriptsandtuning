@@ -7,13 +7,19 @@
       {
         "display": "Bulk Destroy",
         "command": "bulk_destroy",
-        "buttonDisplay": "test",
+        "buttonDisplay": "destroy",
         "args": []
       },
       {
         "display": "Bulk Create",
         "command": "bulk_create",
         "buttonDisplay": "create",
+        "args": []
+      },
+      {
+        "display": "Bulk Ping",
+        "command": "bulk_ping",
+        "buttonDisplay": "ping",
         "args": []
       }
     ]

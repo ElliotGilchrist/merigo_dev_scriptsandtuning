@@ -20,9 +20,16 @@ defmodule PGS.AreaManager do
         end)
     end
 
+    def bulk_ping() do
+        Enum.each(1..@area_count, fn i ->
+            area = area_name(i)
+            Sys.Area.notify(area, "ping", nil)
+        end)
+    end
+
     def create_area(name) do
         Sys.Log.info("[#{name}] Creating")
-        Sys.Area.Grid.Square.createElixirBacked(name, {7, 7}, nil)
+        Sys.Area.Grid.Square.createElixirBacked(name, {7, 7}, nil, process: :transient)
     end
 
     def area_pid(name) do

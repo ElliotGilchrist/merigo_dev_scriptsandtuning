@@ -9,6 +9,10 @@ defmodule PGS.Game do
     def doPortal("bulk_destroy", _) do
         PGS.AreaManager.bulk_destroy()
     end
+
+    def doPortal("bulk_ping", _) do
+        PGS.AreaManager.bulk_ping()
+    end
 end
 
 
