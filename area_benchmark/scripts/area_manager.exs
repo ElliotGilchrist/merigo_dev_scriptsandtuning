@@ -22,7 +22,7 @@ defmodule PGS.AreaManager do
 
     def create_area(name) do
         Sys.Log.info("[#{name}] Creating")
-        Sys.Area.Grid.Square.startElixirBacked(name, {7, 7}, nil)
+        Sys.Area.Grid.Square.createElixirBacked(name, {7, 7}, nil)
     end
 
     def area_pid(name) do
