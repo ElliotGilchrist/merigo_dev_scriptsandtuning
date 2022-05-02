@@ -1,10 +1,12 @@
 {
   "AreaCrashGame": {
-    "access": { "game":  true },
+    "access": {
+      "game": true
+    },
     "commands": [
       {
-        "display": "Bulk Test",
-        "command": "bulk_test",
+        "display": "Bulk Destroy",
+        "command": "bulk_destroy",
         "buttonDisplay": "test",
         "args": []
       },
@@ -13,84 +15,6 @@
         "command": "bulk_create",
         "buttonDisplay": "create",
         "args": []
-      },
-      {
-        "display": "Create Async",
-        "command": "create_async",
-        "buttonDisplay": "create",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      },
-      {
-        "display": "Create Sync",
-        "command": "create_sync",
-        "buttonDisplay": "create",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      },
-      {
-        "display": "Destroy",
-        "command": "destroy",
-        "buttonDisplay": "destroy",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      },
-      {
-        "display": "Populate Async",
-        "command": "populate_async",
-        "buttonDisplay": "populate",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      },
-      {
-        "display": "Populate Sync",
-        "command": "populate_sync",
-        "buttonDisplay": "populate",
-        "args": [
-          {
-            "name": "name",
-            "display": "Name",
-            "default": "myarea"
-          }
-        ]
-      }
-    ]
-  },
-  "Exec": {
-    "access": {
-      "game": true
-    },
-    "commands": [
-      {
-        "display": "Exec",
-        "command": "exec",
-        "buttonDisplay": "Exec",
-        "args": [
-          { "name": "exec",
-            "display": "exec",
-            "default": "Sys.Log.debug(\"Hello, World\")"
-          }
-        ]
       }
     ]
   }
