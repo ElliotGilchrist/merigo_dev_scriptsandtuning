@@ -5,9 +5,9 @@
     },
     "commands": [
       {
-        "display": "Bulk Destroy",
-        "command": "bulk_destroy",
-        "buttonDisplay": "destroy",
+        "display": "Bulk Schedule",
+        "command": "bulk_schedule",
+        "buttonDisplay": "schedule",
         "args": []
       }
     ]
