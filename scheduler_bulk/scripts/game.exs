@@ -5,7 +5,7 @@ defmodule PGS.Game do
 
     @time 30_000 # 30 seconds
     @actionType "my_type"
-    @triggerCount 1
+    @triggerCount -1
 
     @impl true
     def doPortal("bulk_schedule", _) do
@@ -17,8 +17,9 @@ defmodule PGS.Game do
     end
 
     @impl true
-    def onAction(@actionType, i, jobKey) do
-        Sys.Log.info("onAction for #{i}: #{inspect jobKey}")
+    def onAction(@actionType, _i, _jobKey) do
+        # Sys.Log.info("onAction for #{i}: #{inspect jobKey}")3
+        :ok
     end
 
 end
