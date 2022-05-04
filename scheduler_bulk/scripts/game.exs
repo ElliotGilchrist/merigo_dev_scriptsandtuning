@@ -1,7 +1,7 @@
 defmodule PGS.Game do
     @behaviour Sys.Script.Game
 
-    @count 1_000
+    @count 10_000
 
     @time 30_000 # 30 seconds
     @actionType "my_type"
