@@ -8,7 +8,8 @@ defmodule PGS.Game do
     @triggerCount 1
 
     @impl true
-    def doPortal("bulk_create", _) do
+    def doPortal("bulk_schedule", _) do
+        Sys.Log.info("Bulk scheduling #{@count} actions")
         for i <- 1..@count do
             actionId = Sys.Game.scheduleAction(@time, @triggerCount, @actionType, i)
             Sys.Log.info("Scheduled action #{i}: #{inspect actionId}")
