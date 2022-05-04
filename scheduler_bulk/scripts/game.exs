@@ -5,7 +5,7 @@ defmodule PGS.Game do
 
     @time 30_000 # 30 seconds
     @actionType "my_type"
-    @triggerCount -1
+    @triggerCount 1
 
     @impl true
     def doPortal("bulk_schedule", _) do
