@@ -1,0 +1,15 @@
+{
+  "AreaCrashGame": {
+    "access": {
+      "game": true
+    },
+    "commands": [
+      {
+        "display": "Bulk Destroy",
+        "command": "bulk_destroy",
+        "buttonDisplay": "destroy",
+        "args": []
+      }
+    ]
+  }
+}

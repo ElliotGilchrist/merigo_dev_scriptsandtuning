@@ -7,3 +7,6 @@
 - config: game_deadlock/config.yml
   scripts: game_deadlock/scripts
   tuning: empty_tuning
+- config: scheduler_bulk/config.yml
+  scripts: scheduler_bulk/scripts
+  tuning: empty_tuning

@@ -1,6 +1,6 @@
 defmodule PGS.AreaManager do
 
-    @area_count 100
+    @area_count 10
 
     def random_area() do
         random_area(Sys.Random.integer(@area_count))
@@ -13,19 +13,13 @@ defmodule PGS.AreaManager do
     def bulk_create() do
         Enum.each(1..@area_count, fn i ->
             area = random_area(i)
-            create_area_sync(area)
+            create_area(area)
         end)
     end
 
-    def create_area_sync(name) do
-        Sys.Log.info("[#{name}] Creating (sync) ->")
-        Sys.Area.Grid.Square.create(name, "default", Sys.Random.sample(1..3), Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
-        Sys.Log.info("[#{name}] <- Created (sync)")
-    end
-
-    def create_area_async(name) do
-        Sys.Log.info("[#{name}] Creating (async)")
-        Sys.Area.Grid.Square.createAsync(name, "default", Sys.Random.sample(1..3), Sys.Random.sample(1..8), Sys.Random.sample(1..8), false, :perpetual, :persistent, nil)
+    def create_area(name) do
+        Sys.Log.info("[#{name}] Creating")
+        Sys.Area.Grid.Square.startElixirBacked(name, {Sys.Random.sample(1..3), Sys.Random.sample(1..8)}, nil, layers: Sys.Random.sample(1..8), multi: true)
     end
 
     def populate_sync(name) do
@@ -59,7 +53,7 @@ defmodule PGS.AreaManager do
         # GenServer.cast(pid, {:destroy, gKey, areaName, args})
     end
 
-    @actions [:create_area_sync, :create_area_async, :populate_sync, :populate_async, :destroy]
+    @actions [:create_area, :populate_sync, :populate_async, :destroy]
     # @actions [:create_area_sync]
 
     def random_action(info) do
